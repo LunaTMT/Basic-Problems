@@ -1,0 +1,27 @@
+
+def count_substring(string, sub_string):
+
+    inside = 0
+    check = 0
+    for element in range(0, len(string)):
+        try:
+            for n in range(0, len(sub_string)):
+                if sub_string[n] == string[element + n]:
+                    # inside += 1;
+                    check += 1
+                    if (check == len(sub_string)):
+
+                        inside += 1;
+        except IndexError:
+            pass
+        check = 0
+        # print()
+    return inside
+
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+
+    count = count_substring(string, sub_string)
+    print(count)
